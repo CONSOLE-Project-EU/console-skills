@@ -1,0 +1,16 @@
+{
+  "name": "console-code-analysis",
+  "displayName": "CONSOLE code analysis",
+  "version": "0.1.0",
+  "description": "Analyze your software project with CONSOLE and explain the results in plain language.",
+  "author": {
+    "name": "Ciprian Oprisa"
+  },
+  "repository": "https://github.com/CONSOLE-Project-EU/console-skills",
+  "license": "MIT",
+  "keywords": [
+    "code-analysis",
+    "developer-tools",
+    "automation"
+  ]
+}
