@@ -3,7 +3,6 @@
 
 Usage examples:
   console-skill scan .
-  console-skill scan . --pr main...feature-branch
   console-skill config --server https://dashboard.consoleproject.eu/api/v1 --api-key <key>
 """
 
@@ -17,7 +16,6 @@ from console_skill import (
     ConfigMissingError,
     DEFAULT_SERVER,
     create_job,
-    find_git_root,
     get_clues,
     load_config,
     poll_job,
@@ -81,11 +79,6 @@ def main(argv: list[str] | None = None) -> int:
 
     scan_parser = subparsers.add_parser("scan", help="Scan a project directory")
     scan_parser.add_argument("project_dir", help="Project directory to scan")
-    scan_parser.add_argument(
-        "--pr",
-        metavar="BASE...HEAD",
-        help="Filter results to files changed in a PR (e.g., main...feature)",
-    )
     scan_parser.add_argument("--version", help="Project version label")
     scan_parser.add_argument("--details", help="Scan details / context")
     scan_parser.add_argument("--timeout", type=int, default=600, help="Polling timeout in seconds")

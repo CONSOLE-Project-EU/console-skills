@@ -1,4 +1,4 @@
-"""CONSOLE AI Skill - Python package for analyzing projects with CONSOLE."""
+"""CONSOLE AI Skill - Python tool for analyzing projects with CONSOLE."""
 
 import io
 import json
@@ -8,6 +8,7 @@ import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+import fnmatch
 
 import api_client
 
@@ -93,20 +94,12 @@ def _should_ignore(rel_path: str, gitignore_patterns: set[str]) -> bool:
     parts = Path(rel_path).parts
     for part in parts:
         for pattern in DEFAULT_IGNORE:
-            if _match_pattern(part, pattern):
+            if fnmatch.fnmatch(part, pattern):
                 return True
         for pattern in gitignore_patterns:
-            if _match_pattern(part, pattern) or _match_pattern(rel_path, pattern):
+            if fnmatch.fnmatch(part, pattern) or fnmatch.fnmatch(rel_path, pattern):
                 return True
     return False
-
-
-def _match_pattern(value: str, pattern: str) -> bool:
-    if pattern.startswith("*"):
-        return value.endswith(pattern[1:])
-    if pattern.endswith("*"):
-        return value.startswith(pattern[:-1])
-    return value == pattern
 
 
 def _read_gitignore(project_dir: Path) -> set[str]:

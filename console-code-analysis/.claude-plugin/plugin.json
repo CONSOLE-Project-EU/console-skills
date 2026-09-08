@@ -1,7 +1,7 @@
 {
   "name": "console-code-analysis",
   "displayName": "CONSOLE code analysis",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Analyze your software project with CONSOLE and explain the results in plain language.",
   "author": {
     "name": "Ciprian Oprișa"
@@ -11,6 +11,7 @@
   "keywords": [
     "code-analysis",
     "developer-tools",
-    "automation"
+    "automation",
+    "console"
   ]
 }

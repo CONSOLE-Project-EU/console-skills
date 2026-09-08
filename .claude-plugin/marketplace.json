@@ -5,7 +5,7 @@
     {
       "name": "console-code-analysis",
       "source": "./console-code-analysis",
-      "description": "What it does"
+      "description": "Analyze your software project with CONSOLE and explain the results in plain language."
     }
   ]
 }
