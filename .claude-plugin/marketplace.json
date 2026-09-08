@@ -1,0 +1,11 @@
+{
+  "name": "console-project-marketplace",
+  "owner": { "name": "Ciprian Oprișa" },
+  "plugins": [
+    {
+      "name": "console-code-analysis",
+      "source": "./console-code-analysis",
+      "description": "What it does"
+    }
+  ]
+}
