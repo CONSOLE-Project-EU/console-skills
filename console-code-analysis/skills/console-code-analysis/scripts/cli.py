@@ -33,8 +33,6 @@ def cmd_scan(args: argparse.Namespace) -> int:
 
     version = args.version
     details = args.details
-    if args.pr:
-        details = (details or "") + f"\nPR scan: {args.pr}"
 
     print(f"Creating CONSOLE job for {project_dir.name}...")
     job_id = create_job(
