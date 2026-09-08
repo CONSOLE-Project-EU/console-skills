@@ -13,7 +13,7 @@ When the user asks to:
 
 run:
 ```bash
-python ${CLAUDE_PLUGIN_ROOT}/skills/console-code-analysis/scripts/cli.py scan .
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/console-code-analysis/scripts/cli.py scan .
 ```
 
 Read the complete output, which should be a JSON list of security clue objects. Each clue should have at least the following fields:
